@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block body %}
+<h1>TODO List</h1>
+<a href="{% url 'todo:new' %}" class="btn btn-outline-primary">new</a>
+<hr> {% for todo in todos %}
+<div class="row">
+    <div class="col">
+        <a href="{% url 'todo:edit' todo.id %}" class="btn btn-outline-info">edit</a>
+        <a href="{% url 'todo:show' todo.id %}">
+            <span>---{{todo.title}}---</span>
+        </a>
+        <a class="btn btn-outline-danger" href="{% url 'todo:delete' todo.id %}">delete</a>
+        {% empty %}
+        <a href="#" class="btn btn-outline-info disabled">No Todo</a>
+    </div>
+</div>
+{% endfor %} {% endblock body %}

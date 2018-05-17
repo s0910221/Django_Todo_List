@@ -1,0 +1,13 @@
+{% extends "layout.html" %} {% load bootstrap4 %} {% block body %}
+<div class="row">
+    <div class="col">
+        <span>標題:{{todo.title}}</span>
+        <br>
+        <span>內容:{{todo.content}}</span>
+        <br>
+        <span>狀態:{{todo.status}}</span>
+        <br>
+        <a class="btn btn-outline-warning" href="{% url 'todo:index' %}">back</a>
+    </div>
+</div>
+<hr> {% endblock body %}
